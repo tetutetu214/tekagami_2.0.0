@@ -1,66 +1,59 @@
-<div class="container">
-  <h2>sign up</h2>
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-    
-    <div class="field">
-      <%= f.label :nickname %><br />
-      <%= f.text_area :nickname, autofocus: true, autocomplete: "nickname" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-  <% end %>
-  <%= render "devise/shared/links" %>
-
-  <body>
-   <div class="container">
+<div class="container bg-light">
       <div class="col-md-6 mx-auto text-center">
          <div class="header-title">
             <h1 class="wv-heading--title">
-               sign up
+                <%= image_tag "logo_4d5156.png", :size=>"320x129",class: "img-responsive" %>
             </h1>
             <h2 class="wv-heading--subtitle">
-               わすれてしまった”じぶん”をさがしにいこう
+               わすれてしまった<br>”じぶん”をさがしに
             </h2>
          </div>
       </div>
       <div class="row">
          <div class="col-md-4 mx-auto">
             <div class="myform form ">
-               <form action="" method="post" name="login">
-                  <div class="form-group">
-                     <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Name">
-                  </div>
-                  <div class="form-group">
-                     <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email">
-                  </div>
-                  <div class="form-group">
-                     <input type="number" min="0" name="phone" id="phone"  class="form-control my-input" placeholder="Phone">
-                  </div>
-                  <div class="text-center ">
-                     <button type="submit" class=" btn btn-block send-button tx-tfm">Create Your Free Account</button>
-                  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+    
+    <div class="form-group">
+      <%= f.text_field :nickname, autofocus: true,class: "form-control my-input", id: "name" ,placeholder: "Name" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true,class: "form-control my-input", id: "name" ,placeholder: "email" %>
+    </div>
+
+    <div class="form-group">
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autofocus: true,class: "form-control my-input", id: "name" ,placeholder: "new-password" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, autofocus: true,class: "form-control my-input", id: "name" ,placeholder: "nwe-password" %>
+    </div>
+
+    <div class="text-center ">
+        <button type="submit" class=" btn btn-block send-button tx-tfm">Create Your Free Account</button>
+    </div>
+
+  <% end %>
+
+
+
+
+  
+  <%= render "devise/shared/links" %>
+
+  <body>
+   <div class="container">
+      
+
+             
+
                   <div class="col-md-12 ">
                      <div class="login-or">
                         <hr class="hr-or">
