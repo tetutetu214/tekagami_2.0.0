@@ -14,80 +14,77 @@
       <div class="col-md-4 mx-auto">
          <div class="myform form ">
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-    <%= render "devise/shared/error_messages", resource: resource %>
-    
-    <div class="form-group">
-      <%= f.text_field :nickname, autofocus: true,class: "form-control my-input", id: "name" ,placeholder: "Name" %>
-    </div>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            
+            <div class="form-group">
+               <%= f.text_field :nickname, autofocus: true,class: "form-control my-input", id: "name" ,placeholder: "Name" %>
+            </div>
 
-    <div class="form-group">
-      <%= f.email_field :email, autofocus: true,class: "form-control my-input", id: "name" ,placeholder: "email" %>
-    </div>
+            <div class="form-group">
+               <%= f.email_field :email, autofocus: true,class: "form-control my-input", id: "email" ,placeholder: "email" %>
+            </div>
 
-    <div class="form-group">
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autofocus: true,class: "form-control my-input", id: "name" ,placeholder: "new-password" %>
-    </div>
+            <div class="form-group">
+               <% if @minimum_password_length %>
+               <em>(<%= @minimum_password_length %> characters minimum)</em>
+               <% end %><br />
+               <%= f.password_field :password, autofocus: true,class: "form-control my-input", id: "password" ,placeholder: "new-password" %>
+            </div>
 
-    <div class="form-group">
-      <%= f.password_field :password_confirmation, autofocus: true,class: "form-control my-input", id: "name" ,placeholder: "nwe-password" %>
-    </div>
+            <div class="form-group">
+               <%= f.password_field :password_confirmation, autofocus: true,class: "form-control my-input", id: "password_confiremation" ,placeholder: "nwe-password" %>
+            </div>
 
-    <div class="text-center ">
-        <button type="submit" class=" btn btn-block send-button tx-tfm">sign_up</button>
-    </div>
+            <div class="text-center ">
+               <button type="submit" class=" btn btn-block send-button tx-tfm">sign_up</button>
+            </div>
 
-   <% end %>
+            <% end %>
 
          </div>
-      
+         <div class="form_tag">
 
-    <div class="col-md-12 ">
-        <div class="login-or">
-          <hr class="hr-or">
-        </div>
-    </div>
+            <div class="col-md-12 ">
+               <div class="login-or">
+                  <hr class="hr-or">
+               </div>
+            </div>
 
-    <div class="text-center ">
-        <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
-          <%= render "devise/shared/links" %>
-        </button>
-    </div>
+            <div class="text-center ">
+               <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
+                  <%= render "devise/shared/links" %>
+               </button>
+            </div>
 
-   <div class="col-md-12 ">
-      <div class="login-or">
-         <hr class="hr-or">
-      </div>
-   </div>
+            <div class="col-md-12 ">
+               <div class="login-or">
+                  <hr class="hr-or">
+               </div>
+            </div>
 
-    <div class="text-center mb-2">
-        <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
-          <%= link_to "Google_acount","#" %>
-        </button>
-    </div>
+            <div class="text-center mb-2">
+               <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
+                  <%= link_to "Google_acount","#" %>
+               </button>
+            </div>
 
-    <div class="text-center mb-2">
-        <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
-         <%= link_to "Amazon_acount","#" %>
-        </button>
-    </div>
-    <div class="text-center mb-2">
-        <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
-         <%= link_to "Facebook_acount","#" %>
-        </button>
-    </div>
-    <div class="text-center mb-2">
-        <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
-         <%= link_to "Line_acount","#" %>
-        </button>
-    </div>
-
-
-
+            <div class="text-center mb-2">
+               <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
+                  <%= link_to "Amazon_acount","#" %>
+               </button>
+            </div>
+            <div class="text-center mb-2">
+               <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
+                  <%= link_to "Facebook_acount","#" %>
+               </button>
+            </div>
+            <div class="text-center mb-2">
+               <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
+                  <%= link_to "Line_acount","#" %>
+               </button>
+            </div>
       </div>
    </div>
 </div>
