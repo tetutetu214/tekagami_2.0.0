@@ -5,15 +5,16 @@
                 <%= image_tag "logo_4d5156.png", :size=>"320x129",class: "img-responsive" %>
             </h1>
             <h2 class="wv-heading--subtitle">
-               わすれてしまった<br>”じぶん”をさがしに
+               わすれてしまった<br>”わたし”をさがしに
             </h2>
          </div>
       </div>
-      <div class="row">
-         <div class="col-md-4 mx-auto">
-            <div class="myform form ">
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+   <div class="row">
+      <div class="col-md-4 mx-auto">
+         <div class="myform form ">
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
     <%= render "devise/shared/error_messages", resource: resource %>
     
@@ -37,40 +38,56 @@
     </div>
 
     <div class="text-center ">
-        <button type="submit" class=" btn btn-block send-button tx-tfm">Create Your Free Account</button>
+        <button type="submit" class=" btn btn-block send-button tx-tfm">sign_up</button>
     </div>
 
-  <% end %>
+   <% end %>
 
-
-
-
-  
-  <%= render "devise/shared/links" %>
-
-  <body>
-   <div class="container">
+         </div>
       
 
-             
+    <div class="col-md-12 ">
+        <div class="login-or">
+          <hr class="hr-or">
+        </div>
+    </div>
 
-                  <div class="col-md-12 ">
-                     <div class="login-or">
-                        <hr class="hr-or">
-                        <span class="span-or">or</span>
-                     </div>
-                  </div>
-                  <div class="form-group">
-                     <a class="btn btn-block g-button" href="#">
-                     <i class="fa fa-google"></i> Sign up with Google
-                     </a>
-                  </div>
-                  <p class="small mt-3">By signing up, you are indicating that you have read and agree to the <a href="#" class="ps-hero__content__link">Terms of Use</a> and <a href="#">Privacy Policy</a>.
-                  </p>
-               </form>
-            </div>
-         </div>
+    <div class="text-center ">
+        <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
+          <%= render "devise/shared/links" %>
+        </button>
+    </div>
+
+   <div class="col-md-12 ">
+      <div class="login-or">
+         <hr class="hr-or">
+      </div>
+   </div>
+
+    <div class="text-center mb-2">
+        <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
+          <%= link_to "Google_acount","#" %>
+        </button>
+    </div>
+
+    <div class="text-center mb-2">
+        <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
+         <%= link_to "Amazon_acount","#" %>
+        </button>
+    </div>
+    <div class="text-center mb-2">
+        <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
+         <%= link_to "Facebook_acount","#" %>
+        </button>
+    </div>
+    <div class="text-center mb-2">
+        <button type="submit" class=" btn btn-block send-button tx-tfm" href="new_user_session_path" >
+         <%= link_to "Line_acount","#" %>
+        </button>
+    </div>
+
+
+
       </div>
    </div>
 </div>
-</body>
