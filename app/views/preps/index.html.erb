@@ -36,6 +36,17 @@
         </div>
       <% end %>
          
-
+        <div class="prep_list">
+          <ul class="preps_lists">
+            <% if @preps %>
+              <% @preps.each do |prep|%>
+                <li class="preps_list">
+                  <%= prep.now %>
+                  <%= prep.target %>
+                </li>
+              <% end%>
+            <% end %>
+          </ul>
+        </div>
   </div>
 </div>
