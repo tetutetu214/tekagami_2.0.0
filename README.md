@@ -1,24 +1,71 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
+| Column           | Type   | Options     |
+| ---------------- | ------ | ----------- |
+| nickname         | string | null: false |
 
-Things you may want to cover:
+### Association
+- has_many :preps
+- has_many :tasks
+- has_many :actives
+- has_many :reviews
 
-* Ruby version
 
-* System dependencies
+## preps テーブル
+| Column                | Type       | Options           |
+| --------------------- | ---------- | ----------------- |
+| now                   | string     | null: false       |
+| target                | string     | null: false       |
+| user                  | references | foreign_key: true |
 
-* Configuration
+### Association
+- belongs_to :user
+- has_many   :tasks
+- has_many   :actives
+- has_many   :reviews
 
-* Database creation
 
-* Database initialization
+## tasks テーブル
+| Column             | Type       | Options           |
+| ------------------ | ---------- | ----------------- |
+| task_1             | text       | null: false       |
+| task_2             | text       | null: false       |
+| task_3             | text       | null: false       |
+| user               | references | foreign_key: true |
+| prep               | references | foreign_key: true |
 
-* How to run the test suite
+- belongs_to :user
+- belongs_to :prep
+- has_many   :actives
+- has_many   :reviews
 
-* Services (job queues, cache servers, search engines, etc.)
+## actives テーブル
+| Column             | Type       | Options           |
+| ------------------ | ---------- | ----------------- |
+| way_1              | text       | null: false       |
+| way_2              | text       | null: false       |
+| way_3              | text       | null: false       |
+| user               | references | foreign_key: true |
+| prep               | references | foreign_key: true |
+| task               | references | foreign_key: true |
 
-* Deployment instructions
+- belongs_to :user
+- belongs_to :prep
+- belongs_to :tasks
+- has_many   :reviews
 
-* ...
+## reviews テーブル
+| Column             | Type       | Options           |
+| ------------------ | ---------- | ----------------- |
+| way_1              | text       | null: false       |
+| way_2              | text       | null: false       |
+| way_3              | text       | null: false       |
+| user               | references | foreign_key: true |
+| prep               | references | foreign_key: true |
+| task               | references | foreign_key: true |
+
+- belongs_to :user
+- belongs_to :prep
+- belongs_to :tasks
+- belongs_to :active
