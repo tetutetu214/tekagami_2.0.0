@@ -1,0 +1,59 @@
+<div class="container-fluid bg-light d-flex flex-column" >
+  <div class="container mb-auto">
+  
+    <h1 class="mt-4">現実と夢を記述する</h1>
+
+    <div class="col-md-12 ">
+      <div class="login-or">
+          <hr class="hr-or">
+      </div>
+    </div>
+
+     <p>未来を語る前に、今の現実を知らなければならない<br>
+    現実からしかスタートできないからである。<br>by P.F.ドラッカー</p>
+
+    <div class="col-md-12 ">
+      <div class="login-or">
+          <hr class="hr-or">
+      </div>
+    </div>
+
+      <%= form_with(model: @prep,local: true) do |f| %>
+        <%= render 'shared/error_messages', model:  f.object %>
+
+        <div class="form-group mt-2">
+          <%= f.label :now, "ゴールを目指している途中の気持ちを書いてみる" %><br />
+          <%= f.text_area :now, class: "form-control", placeholder: "(例)なんかモヤモヤしている" %>
+        </div>
+        <div class="form-group mt-2">
+          <%= f.label :target, "ゴールを達成した未来の気持ちを書いてみる" %><br />
+          <%= f.text_area :target, class: "form-control", placeholder: "(例)なんかかいい感じ" %>
+        </div>
+
+        <div class="text-center mb-5">
+          <%= f.submit "記録する" ,class:"btn btn-block send-button tx-tfm" %>
+        </div>
+      <% end %>
+
+      <div class="form_tag"> 
+        <div class="col-md-12 ">
+          <div class="login-or">
+            <hr class="hr-or">
+          </div>
+        </div>
+         
+        <div class="prep_list">
+          <ul class="preps_lists">
+            <% if @preps %>
+              <% @preps.each do |prep|%>
+                <li class="preps_list">
+                  <%= prep.now %>
+                  <%= prep.target %>
+                  <%= link_to "一覧", "#" %>
+                </li>
+              <% end%>
+            <% end %>
+          </ul>
+        </div>
+  </div>
+</div>

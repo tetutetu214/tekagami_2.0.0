@@ -1,5 +1,8 @@
 ja:
  activerecord:
    attributes:
-     user:
-       nickname: ニックネーム
+    user:
+      nickname: ニックネーム
+    prep:
+      now: 途中の気持ち
+      target: 達成した気持ち
