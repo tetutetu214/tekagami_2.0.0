@@ -6,10 +6,56 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body>
+<body>
+  <div class= "container-fluid">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixd-top">
+      <a class="sign">
+        <%= link_to image_tag("logo_4d5156.png",:size=>"108x45",class: "wv-heading--title"), "/" %>
+      </a>    
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">
+        <div class="navbar-nav" >
+         <% if user_signed_in? %>
+          <%= link_to current_user.nickname,"#" ,class: "nav-link"%> 
+          <%= link_to "現実と夢", "#" ,class: "nav-link"  %>
+          <%= link_to "夢の課題", "#" ,class: "nav-link"  %>
+          <%= link_to "課題の克服", "#" ,class: "nav-link"  %>
+          <%= link_to "克服し現実へ", "#" ,class: "nav-link"  %>
+          <%= link_to "log_out", destroy_user_session_path ,:method => :get ,class: "nav-link",remote: true  %>
+         <% else %>
+          <%= link_to "intro", "#" ,class: "nav-link mr-2"  %>
+          <%= link_to "prof", "#" ,class: "nav-link mr-2"  %>
+          <%= link_to "log_in", new_user_session_path ,class: "nav-link mr-2" %>
+          <%= link_to "sign_up", new_user_registration_path ,class: "nav-link order-2 mr-2" %>
+         <% end %>
+        </div>
+      </div>
+    </nav>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+   
     <%= yield %>
-  </body>
+    
+      <div class="footer bg-light">
+        <div class= "footer_space">
+          <div class="sign text-center">
+            <%= link_to image_tag("logo_4d5156.png",:size=>"90x34",class: "wv-heading--title"), "/" %>
+          </div>    
+          <p class="text-center">Copyright © 2020 Tekagami, All Rights Reserved.</p>
+        </div>
+      </div>
+    
+  </div>
+</body>
+
 </html>
