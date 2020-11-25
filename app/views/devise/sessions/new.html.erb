@@ -5,6 +5,9 @@
             <h1 class="wv-heading--title">
                 <%= image_tag "logo_4d5156.png", :size=>"320x129",class: "img-responsive" %>
             </h1>
+            <h2 class="wv-heading--subtitle">
+               わすれてしまった<br>”わたし”をさがしに
+            </h2>
          </div>
       </div>
   <div class="row">
@@ -12,7 +15,7 @@
       <div class="myform form ">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-        <div class='login-flash-message'>
+        <div class='login-flash-message mb-3'>
           <%= flash[:notice] %>
           <%= flash[:alert] %>
         </div>
