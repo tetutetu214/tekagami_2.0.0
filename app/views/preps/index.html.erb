@@ -19,8 +19,7 @@
     </div>
 
       <%= form_with(model: @prep, local: true) do |f| %>
-
-      <%# <%= render 'shared/error_messages' %> 
+        <%= render 'shared/error_messages', model:  f.object %>
 
         <div class="form-group">
           <%= f.label :now, "ゴールを目指している今の気持ちを書いてみる" %><br />

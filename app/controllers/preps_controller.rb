@@ -6,8 +6,9 @@ class PrepsController < ApplicationController
   end
 
   def create
-    @prep = Prep.create(prep_params)
-    if @prep.save
+    @prep = Prep.new(prep_params)
+    if @prep.valid?
+      @prep.save
       redirect_to root_path
     else
       render :index
