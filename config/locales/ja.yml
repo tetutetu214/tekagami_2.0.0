@@ -6,3 +6,7 @@ ja:
     prep:
       now: 途中の気持ち
       target: 達成した気持ち
+    task:
+      task_1: 期日
+      task_2: なにをするか
+      task_3: どんな方法でするか
