@@ -1,7 +1,7 @@
 class Active < ApplicationRecord
   belongs_to :user
   belongs_to :prep
-  belongs_to :tasks
+  belongs_to :task
 
   with_options presence: true do
     validates :way_1

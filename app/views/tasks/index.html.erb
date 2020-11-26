@@ -65,7 +65,7 @@
                   <%= task.task_1 %>
                   <%= task.task_2 %>
                   <%= task.task_3 %>
-                  <%= link_to "Lesson3へ すすむ",prep_task_actives_path(task.id) %>
+                  <%= link_to "Lesson3へ すすむ",prep_task_actives_path(@prep.id,task.id) %>
                 </li>
               <% end%>
             <% end %>

@@ -25,7 +25,7 @@
       </div>
     </div>
 
-      <%= form_with(model: [@prep, @active], local: true) do |f| %>
+      <%= form_with(model: [@prep, @task, @active], local: true) do |f| %>
       
         <%= render 'shared/error_messages', model:  f.object %>
 
@@ -65,7 +65,7 @@
                   <%= active.way_1 %>
                   <%= active.way_2 %>
                   <%= active.way_3 %>
-                  <%# <%= link_to "Lesson3へ すすむ",prep_actives(task.id) %> %>
+                  <%# <%= link_to "Lesson4へ すすむ",prep_actives(@prep.id,@task.id,active.id) %> %>
                 </li>
               <% end%>
             <% end %>
