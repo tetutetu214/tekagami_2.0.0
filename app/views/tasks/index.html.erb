@@ -51,12 +51,13 @@
           <div class="prep_list">
           <ul class="preps_lists">
 
-            <% if @user %>
-              <% @user.prep.each do |prep|%>
+            <% if @tasks %>
+              <% @tasks.each do |task|%>
                 <li class="preps_list">
-                  <%= prep.now %>
-                  <%= prep.target %>
-                  <%= link_to "Lesson2へ すすむ",prep_tasks_path(prep.id) %>
+                  <%= task.task_1 %>
+                  <%= task.task_2 %>
+                  <%= task.task_3 %>
+                  <%# <%= link_to "Lesson3へ すすむ",prep_tasks_path(prep.id) %> %>
                 </li>
               <% end%>
             <% end %>

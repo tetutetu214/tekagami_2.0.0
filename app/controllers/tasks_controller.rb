@@ -2,15 +2,16 @@ class TasksController < ApplicationController
   def index
     @prep = Prep.find(params[:prep_id])
     @task = Task.new
+    @tasks = Task.includes([:user,:prep])
   end
 
   def create
     @prep = Prep.find(params[:prep_id])
     @task = Task.new(task_params)
+    @tasks = Task.includes([:user,:prep])
     if @task.valid?
-      binding.pry
       @task.save
-      redirect_to "/preps/#{@task.prep.id}"
+      redirect_to "/preps/#{@task.prep.id}/tasks"
     else
       render :index
     end

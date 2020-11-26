@@ -6,6 +6,7 @@ class PrepsController < ApplicationController
   end
 
   def create
+    @preps = Prep.includes(:user)
     @prep = Prep.new(prep_params)
     if @prep.valid?
       @prep.save
