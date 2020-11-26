@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :preps
   has_many :tasks
+  has_many :actives
   
   validates :nickname, presence: true
   VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i.freeze

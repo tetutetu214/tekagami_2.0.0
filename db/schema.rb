@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_003623) do
+ActiveRecord::Schema.define(version: 2020_11_26_080318) do
+
+  create_table "actives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "way_1", null: false
+    t.text "way_2", null: false
+    t.text "way_3", null: false
+    t.bigint "user_id"
+    t.bigint "prep_id"
+    t.bigint "task_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["prep_id"], name: "index_actives_on_prep_id"
+    t.index ["task_id"], name: "index_actives_on_task_id"
+    t.index ["user_id"], name: "index_actives_on_user_id"
+  end
 
   create_table "preps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "now", null: false
@@ -46,6 +60,9 @@ ActiveRecord::Schema.define(version: 2020_11_26_003623) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "actives", "preps"
+  add_foreign_key "actives", "tasks"
+  add_foreign_key "actives", "users"
   add_foreign_key "preps", "users"
   add_foreign_key "tasks", "preps"
   add_foreign_key "tasks", "users"

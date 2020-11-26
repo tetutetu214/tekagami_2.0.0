@@ -1,0 +1,75 @@
+<div class="container-fluid bg-light d-flex flex-column" >
+  <div class="container mb-auto">
+  
+    <h1 class="mt-4">Lesson3 課題の克服</h1>
+
+    <div class="col-md-12 ">
+      <div class="login-or">
+          <hr class="hr-or">
+      </div>
+    </div>
+
+     <p>心が変われば、態度が変わる。態度が変われば、行動が変わる。<br>行動が変われば、習慣が変わる。習慣が変われば、人格が変わる。<br>人格が変われば、運命が変わる。運命が変われば、人生が変わる<br>出典不明</p>
+
+    <div class="col-md-12 ">
+      <div class="login-or">
+          <hr class="hr-or">
+      </div>
+    </div>
+
+    <p>Lesson2 での内容表示 <br>〜さんの夢への課題<br>いつまでに？: 3日間<br>何をする？: 日記を書く <br>どうやる？:一言書く<p>
+
+    <div class="col-md-12 ">
+      <div class="login-or">
+          <hr class="hr-or">
+      </div>
+    </div>
+
+      <%= form_with(model: [@prep, @task, @active], local: true) do |f| %>
+      
+        <%= render 'shared/error_messages', model:  f.object %>
+
+        <div class="form-group mt-2">
+          <%= f.label :way_1, "具体的に行動する時間を決める" %><br />
+          <%= f.text_area :way_1, class: "form-control", placeholder: "(例)仕事帰りにやる" %>
+        </div>
+        <div class="form-group mt-2">
+          <%= f.label :way_2, "具体的な場所を決める" %><br />
+          <%= f.text_area :way_2, class: "form-control", placeholder: "(例)電車の中でやる" %>
+        </div>
+       <div class="form-group mt-2">
+          <%= f.label :way_3, "具体的な効果を決める" %><br />
+          <%= f.text_area :way_3, class: "form-control", placeholder: "(例)何かわからないけど、昨日よりもよくなるかもしれない" %>
+        </div>
+
+        <div class="text-center mb-5">
+          <%= f.submit "記録する" ,class:"btn btn-block send-button tx-tfm" %>
+        </div>
+      <% end %>
+
+  </div>
+      <div class="form_tag"> 
+        <div class="col-md-12 ">
+          <div class="login-or">
+            <hr class="hr-or">
+          </div>
+        </div>
+      </div>
+
+          <div class="prep_list">
+          <ul class="preps_lists">
+
+            <% if @actives %>
+              <% @actives.each do |active|%>
+                <li class="preps_list">
+                  <%= active.way_1 %>
+                  <%= active.way_2 %>
+                  <%= active.way_3 %>
+                  <%# <%= link_to "Lesson4へ すすむ",prep_actives(@prep.id,@task.id,active.id) %> %>
+                </li>
+              <% end%>
+            <% end %>
+
+          </ul>
+        </div>
+</div>
