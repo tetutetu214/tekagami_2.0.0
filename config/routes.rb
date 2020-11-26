@@ -3,5 +3,6 @@ Rails.application.routes.draw do
     root 'tops#index'
       resources :preps , only: [:index, :create, :edit, :update, :destroy] do
         resources :tasks , only: [:index, :create, :edit, :update, :destroy]
+          resources :actives , only: [:index, :create, :edit, :update, :destroy]
       end
 end
