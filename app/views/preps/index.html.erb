@@ -1,7 +1,7 @@
 <div class="container-fluid bg-light d-flex flex-column" >
   <div class="container mb-auto">
   
-    <h1 class="mt-4">現実と夢を記述する</h1>
+    <h1 class="mt-4">Lesson1 現実と夢を記述する</h1>
 
     <div class="col-md-12 ">
       <div class="login-or">
@@ -19,6 +19,7 @@
     </div>
 
       <%= form_with(model: @prep,local: true) do |f| %>
+
         <%= render 'shared/error_messages', model:  f.object %>
 
         <div class="form-group mt-2">
@@ -44,15 +45,17 @@
          
         <div class="prep_list">
           <ul class="preps_lists">
+
             <% if @preps %>
               <% @preps.each do |prep|%>
                 <li class="preps_list">
                   <%= prep.now %>
                   <%= prep.target %>
-                  <%= link_to "一覧", "#" %>
+                  <%= link_to "Lesson2へ すすむ",prep_tasks_path(prep.id) %>
                 </li>
               <% end%>
             <% end %>
+
           </ul>
         </div>
   </div>

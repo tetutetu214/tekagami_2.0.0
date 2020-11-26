@@ -9,7 +9,7 @@ class PrepsController < ApplicationController
     @prep = Prep.new(prep_params)
     if @prep.valid?
       @prep.save
-      redirect_to root_path
+      redirect_to preps_path(@prep)
     else
       render :index
     end

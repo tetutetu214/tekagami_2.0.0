@@ -25,10 +25,10 @@
         <div class="navbar-nav" >
          <% if user_signed_in? %>
           <%= link_to current_user.nickname,"#" ,class: "nav-link"%> 
-          <%= link_to "現実と夢", preps_path ,class: "nav-link"  %>
-          <%= link_to "夢の課題", tasks_path ,class: "nav-link"  %>
-          <%= link_to "課題の克服", "#" ,class: "nav-link"  %>
-          <%= link_to "克服し現実へ", "#" ,class: "nav-link"  %>
+          <%= link_to "現実と夢の扉", preps_path ,class: "nav-link"  %>
+          <%# <%= link_to "夢の課題", prep_tasks_path ,class: "nav-link"  %>
+          <%# <%= link_to "課題の克服", "#" ,class: "nav-link"  %>
+          <%# <%= link_to "克服し現実へ", "#" ,class: "nav-link"  %>
           <%= link_to "log_out", destroy_user_session_path ,:method => :get ,class: "nav-link",remote: true  %>
          <% else %>
           <%= link_to "intro", "#" ,class: "nav-link mr-2"  %>
