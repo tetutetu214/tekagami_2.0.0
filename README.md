@@ -15,8 +15,8 @@
 ## preps テーブル
 | Column                | Type       | Options           |
 | --------------------- | ---------- | ----------------- |
-| now                   | string     | null: false       |
-| target                | string     | null: false       |
+| now                   | text       | null: false       |
+| target                | text       | null: false       |
 | user                  | references | foreign_key: true |
 
 ### Association
