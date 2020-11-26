@@ -1,8 +1,8 @@
 class PrepsController < ApplicationController
 
   def index
-    @preps = Prep.includes(:user)
-    @prep = Prep.new
+    @preps = Prep.all
+    @prep= Prep.new
   end
 
   def create

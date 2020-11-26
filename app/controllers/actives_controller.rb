@@ -1,17 +1,19 @@
 class ActivesController < ApplicationController
   def index
     @prep = Prep.find(params[:prep_id])
+    @task = Task.find(params[:task_id]) 
     @active = Active.new
-    @tasks = Task.includes([:user,:prep])
+    @actives = Active.includes([:user,:prep,:task])
   end
 
   def create
     @prep = Prep.find(params[:prep_id])
-    @task = Task.new(task_params)
-    @tasks = Task.includes([:user,:prep])
-    if @task.valid?
-      @task.save
-      redirect_to "/preps/#{@task.prep.id}/tasks"
+    @task = Task.find(params[:task_id])
+    @active = Active.new(active_params)
+    @actives = Active.includes([:user,:prep,:task])
+    if @active.valid?
+      @active.save
+      redirect_to "/preps/#{@active.prep.id}/actives"
     else
       render :index
     end
@@ -19,8 +21,8 @@ class ActivesController < ApplicationController
 
   private
 
-  def task_params 
-    params.require(:task).permit(:task_1, :task_2,:task_3).merge(user_id: current_user.id ,prep_id: params[:prep_id])
+  def active_params 
+    params.require(:active).permit(:way_1, :way_2,:way_3).merge(user_id: current_user.id ,prep_id: params[:prep_id])
   end
-  
+
 end

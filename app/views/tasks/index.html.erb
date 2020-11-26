@@ -17,6 +17,14 @@
       </div>
     </div>
 
+    <p>Lesson1 での内容表示 <br>〜さんの夢への課題<br>現在:なぜか悲しい<br>未来:わくわくしたい<p>
+
+    <div class="col-md-12 ">
+      <div class="login-or">
+          <hr class="hr-or">
+      </div>
+    </div>
+
       <%= form_with(model: [@prep, @task], local: true) do |f| %>
       
         <%= render 'shared/error_messages', model:  f.object %>
@@ -57,7 +65,7 @@
                   <%= task.task_1 %>
                   <%= task.task_2 %>
                   <%= task.task_3 %>
-                  <%= link_to "Lesson3へ すすむ",prep_actives_path(task.id) %>
+                  <%= link_to "Lesson3へ すすむ",prep_task_actives_path(task.id) %>
                 </li>
               <% end%>
             <% end %>
