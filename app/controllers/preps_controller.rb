@@ -1,4 +1,5 @@
 class PrepsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @prep = Prep.new
@@ -15,6 +16,7 @@ class PrepsController < ApplicationController
       render :index
     end
   end
+
 
   private
 
