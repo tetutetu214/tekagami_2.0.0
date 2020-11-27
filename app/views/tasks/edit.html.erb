@@ -1,7 +1,7 @@
 <div class="container-fluid bg-light d-flex flex-column" >
   <div class="container mb-auto">
   
-    <h1 class="mt-4">Lesson2 夢への課題を記述する</h1>
+    <h1 class="mt-4">edit Lesson2 夢への課題を記述する</h1>
 
     <div class="col-md-12 ">
       <div class="login-or">
@@ -60,18 +60,7 @@
           <ul class="preps_lists">
 
             
-              <% @tasks.each do |task|%>
-                <% if user_signed_in? && current_user.id == task.user_id %>
-                <li class="preps_list">
-                  <%= task.task_1 %>
-                  <%= task.task_2 %>
-                  <%= task.task_3 %>
-                  <%= link_to "Lesson3へ すすむ",prep_task_actives_path(@prep,task.id) %>
-                  <%= link_to "編集",edit_prep_task_path(@prep,task) %>
-                  <%= button_to "削除",task_path(@prep,task) ,method: :delete %>
-                </li>
-              <% end%>
-            <% end %>
+
 
           </ul>
         </div>

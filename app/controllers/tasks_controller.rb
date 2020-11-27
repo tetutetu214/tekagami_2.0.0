@@ -19,6 +19,29 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @prep = Prep.find(params[:prep_id])
+    @task = Task.find(params[:id])
+    redirect_to action: :index unless user_signed_in? && current_user.id == @task.user_id
+  end
+  
+  def update
+    @prep = Prep.find(params[:prep_id])
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+       redirect_to "/preps/#{@task.prep.id}/tasks"
+    else
+       render :edit
+    end
+  end
+
+  def destroy
+    @prep = Prep.find(params[:prep_id])
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to task_path(@task)
+  end
+  
   private
 
   def task_params 

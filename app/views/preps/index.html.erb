@@ -54,17 +54,17 @@
         <div class="prep_list">
           <ul class="preps_lists">
 
-            <% if user_signed_in? && current_user.id %>
               <% @preps.each do |prep|%>
-                <li class="preps_list">
-                  <%= prep.now %>
-                  <%= prep.target %>
-                  <%= link_to "Lesson2へ すすむ",prep_tasks_path(prep.id) %>
-                  <%= link_to "編集",edit_prep_path(prep) %>
-                  <%= button_to "削除",prep_path(prep) ,method: :delete %>
-                </li>
-              <% end%>
-            <% end %>
+                <% if user_signed_in? && current_user.id == prep.user_id %>
+                  <li class="preps_list">
+                    <%= prep.now %>
+                    <%= prep.target %>
+                    <%= link_to "Lesson2へ すすむ",prep_tasks_path(prep.id) %>
+                    <%= link_to "編集",edit_prep_path(prep) %>
+                    <%= button_to "削除",prep_path(prep) ,method: :delete %>
+                  </li>
+                <% end%>
+              <% end %>
 
           </ul>
         </div>
