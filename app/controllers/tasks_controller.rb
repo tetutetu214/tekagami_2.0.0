@@ -29,15 +29,15 @@ class TasksController < ApplicationController
     @prep = Prep.find(params[:prep_id])
     @task = Task.find(params[:id])
     if @task.update(task_params)
-       redirect_to "/preps/#{@task.prep.id}/tasks"
+       redirect_to prep_tasks_path(@prep.id,@task)
     else
        render :edit
     end
   end
 
   def destroy
-    @task = Task.find(params[:id])
-    @task.destroy
+    task = Task.find(params[:id])
+    task.destroy
     redirect_to preps_path
   end
   

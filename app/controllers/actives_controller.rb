@@ -22,23 +22,27 @@ class ActivesController < ApplicationController
   end
 
   def edit
-    @prep = Prep.find(params[:id]) 
+    @prep = Prep.find(params[:prep_id]) 
+    @task = Task.find(params[:task_id]) 
+    @active = Active.find(params[:id]) 
     redirect_to action: :index unless user_signed_in? && current_user.id == @prep.user_id
   end
 
   def update
-    @prep = Prep.find(params[:id])
-    if @prep.update(prep_params)
-       redirect_to preps_path(@prep)
+    @prep = Prep.find(params[:prep_id]) 
+    @task = Task.find(params[:task_id]) 
+    @active = Active.find(params[:id]) 
+    if @active.update(active_params)
+       redirect_to prep_task_actives_path(@prep.id,@task.id,@acrive)
     else
        render :edit
     end
   end
 
   def destroy
-    prep = Prep.find(params[:id])
-    prep.destroy
-    redirect_to preps_path(@prep)
+    active = Active.find(params[:id])
+    active.destroy
+    redirect_to preps_path
   end
   
   private
