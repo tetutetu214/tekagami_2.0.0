@@ -1,8 +1,8 @@
 class Prep < ApplicationRecord
   belongs_to :user
-  has_many :tasks
-  has_many :actives
-  has_many :reviews
+  has_many :tasks,dependent: :destroy
+  has_many :actives,dependent: :destroy
+  has_many :reviews,dependent: :destroy
 
   with_options presence: true do
     validates :now
