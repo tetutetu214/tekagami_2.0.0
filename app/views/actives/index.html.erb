@@ -65,7 +65,7 @@
                   <%= active.way_1 %>
                   <%= active.way_2 %>
                   <%= active.way_3 %>
-                  <%# <%= link_to "Lesson4へ すすむ",prep_actives(@prep.id,@task.id,active.id) %> %>
+                  <%= link_to "Lesson4へ すすむ",prep_task_active_reviews_path(@prep.id,@task.id,active.id) %>
                 </li>
               <% end%>
             <% end %>

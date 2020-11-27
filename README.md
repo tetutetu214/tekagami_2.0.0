@@ -58,9 +58,9 @@
 ## reviews テーブル
 | Column             | Type       | Options           |
 | ------------------ | ---------- | ----------------- |
-| way_1              | text       | null: false       |
-| way_2              | text       | null: false       |
-| way_3              | text       | null: false       |
+| rev_1              | text       | null: false       |
+| rev_2              | text       | null: false       |
+| rev_3              | text       | null: false       |
 | user               | references | foreign_key: true |
 | prep               | references | foreign_key: true |
 | task               | references | foreign_key: true |

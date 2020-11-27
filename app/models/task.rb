@@ -2,6 +2,7 @@ class Task < ApplicationRecord
   belongs_to :user
   belongs_to :prep
   has_many :actives
+  has_many :reviews
   
   with_options presence: true do
     validates :task_1

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_080318) do
+ActiveRecord::Schema.define(version: 2020_11_27_005259) do
 
   create_table "actives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "way_1", null: false
@@ -33,6 +33,23 @@ ActiveRecord::Schema.define(version: 2020_11_26_080318) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_preps_on_user_id"
+  end
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "rev_1", null: false
+    t.text "rev_2", null: false
+    t.text "rev_3", null: false
+    t.text "rev_4", null: false
+    t.bigint "user_id"
+    t.bigint "prep_id"
+    t.bigint "task_id"
+    t.bigint "active_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["active_id"], name: "index_reviews_on_active_id"
+    t.index ["prep_id"], name: "index_reviews_on_prep_id"
+    t.index ["task_id"], name: "index_reviews_on_task_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -64,6 +81,10 @@ ActiveRecord::Schema.define(version: 2020_11_26_080318) do
   add_foreign_key "actives", "tasks"
   add_foreign_key "actives", "users"
   add_foreign_key "preps", "users"
+  add_foreign_key "reviews", "actives"
+  add_foreign_key "reviews", "preps"
+  add_foreign_key "reviews", "tasks"
+  add_foreign_key "reviews", "users"
   add_foreign_key "tasks", "preps"
   add_foreign_key "tasks", "users"
 end
