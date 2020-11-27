@@ -11,7 +11,6 @@ class ActivesController < ApplicationController
     @task = Task.find(params[:task_id])
     @active = Active.new(active_params)
     @actives = Active.includes([:user,:prep,:task])
-    binding.pry
     if @active.valid?
       @active.save
       redirect_to "/preps/#{@active.prep.id}/tasks/#{@active.task.id}/actives"
