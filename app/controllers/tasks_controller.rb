@@ -36,10 +36,9 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @prep = Prep.find(params[:prep_id])
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to task_path(@task)
+    redirect_to preps_path
   end
   
   private

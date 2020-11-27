@@ -34,7 +34,7 @@ class PrepsController < ApplicationController
   def destroy
     prep = Prep.find(params[:id])
     prep.destroy
-    redirect_to preps_path(@prep)
+    redirect_to preps_path
   end
 
   private
