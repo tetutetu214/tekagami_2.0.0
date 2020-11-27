@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rev_1, :rev_2,:rev_3).merge(user_id: current_user.id ,prep_id: params[:prep_id],task_id: params[:task_id],acrive_id: params[:active_id])
+    params.require(:review).permit(:rev_1, :rev_2,:rev_3,:rev_4).merge(user_id: current_user.id ,prep_id: params[:prep_id],task_id: params[:task_id],active_id: params[:active_id])
   end
 
 end

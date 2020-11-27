@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'reviews/index'
+  root 'tops#index'
   devise_for :users
      resources :preps do
        resources :tasks, only: [:index, :create] do

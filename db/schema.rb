@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_005259) do
     t.text "rev_1", null: false
     t.text "rev_2", null: false
     t.text "rev_3", null: false
+    t.text "rev_4", null: false
     t.bigint "user_id"
     t.bigint "prep_id"
     t.bigint "task_id"

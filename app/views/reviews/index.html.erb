@@ -1,7 +1,7 @@
 <div class="container-fluid bg-light d-flex flex-column" >
   <div class="container mb-auto">
   
-    <h1 class="mt-4">Lesson3 課題の克服</h1>
+    <h1 class="mt-4">Lesson4 克服し現実へ</h1>
 
     <div class="col-md-12 ">
       <div class="login-or">
@@ -9,7 +9,7 @@
       </div>
     </div>
 
-     <p>心が変われば、態度が変わる。態度が変われば、行動が変わる。<br>行動が変われば、習慣が変わる。習慣が変われば、人格が変わる。<br>人格が変われば、運命が変わる。運命が変われば、人生が変わる<br>出典不明</p>
+     <p>あなたにとって大切で重要な刺激的なことをやっているならば<br>あなたは頑張る必要はない<br>Visionがあなたを突き動かしてくれる<br>by スティーブ・ジョブズ</p>
 
     <div class="col-md-12 ">
       <div class="login-or">
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <p>Lesson2 での内容表示 <br>〜さんの夢への課題<br>いつまでに？: 3日間<br>何をする？: 日記を書く <br>どうやる？:一言書く<p>
+    <p>Lesson3 での内容表示 <br>〜さんの夢への課題<br>いつやる？: 会社帰り<br>どこでする: 電車の中で <br>どんな気持ち:わくわく<p>
 
     <div class="col-md-12 ">
       <div class="login-or">
@@ -30,16 +30,20 @@
         <%= render 'shared/error_messages', model:  f.object %>
 
         <div class="form-group mt-2">
-          <%= f.label :rev_1, "具体的に行動する時間を決める" %><br />
-          <%= f.text_area :rev_1, class: "form-control", placeholder: "(例)仕事帰りにやる" %>
+          <%= f.label :rev_1, "どれだけ夢に近づいたか" %><br />
+          <%= f.text_area :rev_1, class: "form-control", placeholder: "(例)最初よりも少しだけ、なにか良くなった" %>
         </div>
         <div class="form-group mt-2">
-          <%= f.label :rev_2, "具体的な場所を決める" %><br />
-          <%= f.text_area :rev_2, class: "form-control", placeholder: "(例)電車の中でやる" %>
+          <%= f.label :rev_2, "行動して止めようとしたこと" %><br />
+          <%= f.text_area :rev_2, class: "form-control", placeholder: "(例)朝時間の有効に使うため、23時までに就寝するようにする" %>
         </div>
        <div class="form-group mt-2">
-          <%= f.label :rev_3, "具体的な効果を決める" %><br />
-          <%= f.text_area :rev_3, class: "form-control", placeholder: "(例)何かわからないけど、昨日よりもよくなるかもしれない" %>
+          <%= f.label :rev_3, "行動して方法を変えたほうがいいもの" %><br />
+          <%= f.text_area :rev_3, class: "form-control", placeholder: "(例)朝は満員電車のため、聴く学習を取り入れる" %>
+        </div>
+       <div class="form-group mt-2">
+          <%= f.label :rev_4, "行動して新しく初めてみようとしていること" %><br />
+          <%= f.text_area :rev_4, class: "form-control", placeholder: "(例)タイマーを使って時間を区切ってみる" %>
         </div>
 
         <div class="text-center mb-5">
