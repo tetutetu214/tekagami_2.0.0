@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
   root 'tops#index'
   devise_for :users
-     resources :preps do
-       resources :tasks, only: [:index, :create] do
-         resources :actives, only: [:index, :create] do 
-           resources :reviews, only: [:index, :create] 
+     resources :preps, only:[:index, :new, :create] do
+       resources :tasks, only: [:index, :new, :create] do
+         resources :actives, only: [:index, :new, :create] do 
+           resources :reviews, only: [:index, :new, :create] 
          end
        end
      end
 
-     resources :tasks, only:[:show, :edit, :update, :destroy]
-     resources :actives, only:[:show, :edit, :update, :destroy]
-     resources :reviews, only: [:show, :edit, :update, :destroy] 
+     resources :preps, only:[:edit, :update, :destroy]
+     resources :tasks, only:[:edit, :update, :destroy]
+     resources :actives, only:[:edit, :update, :destroy]
+     resources :reviews, only: [:edit, :update, :destroy] 
       # resources :preps , only: [:index, :create, :edit, :update, :destroy] do
       #   resources :tasks , only: [:index, :create, :edit, :update, :destroy]
       # end
