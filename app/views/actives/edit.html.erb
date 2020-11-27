@@ -46,33 +46,3 @@
           <%= f.submit "記録する" ,class:"btn btn-block send-button tx-tfm" %>
         </div>
       <% end %>
-
-  </div>
-      <div class="form_tag"> 
-        <div class="col-md-12 ">
-          <div class="login-or">
-            <hr class="hr-or">
-          </div>
-        </div>
-      </div>
-
-          <div class="prep_list">
-          <ul class="preps_lists">
-
-            
-              <% @actives.each do |active|%>
-                <% if user_signed_in? && current_user.id == task.user_id %>
-                <li class="preps_list">
-                  <%= active.way_1 %>
-                  <%= active.way_2 %>
-                  <%= active.way_3 %>
-                  <%= link_to "Lesson4へ すすむ",prep_task_active_reviews_path(@prep.id,@task.id,active.id) %>
-                  <%= link_to "編集",prep_task_active_reviews_path(@prep,@task,active) %>
-                  <%=  button_to "削除",active_path(active) %>
-                </li>
-              <% end%>
-            <% end %>
-
-          </ul>
-        </div>
-</div>
