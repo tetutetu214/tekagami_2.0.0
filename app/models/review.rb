@@ -8,6 +8,8 @@ class Review < ApplicationRecord
     validates :rev_1
     validates :rev_2
     validates :rev_3
+    validates :rev_4
+
   end
 
 end

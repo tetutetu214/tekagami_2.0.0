@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'tops#index'
+
   devise_for :users
      resources :preps, only:[:index, :new, :create] do
        resources :tasks, only: [:index, :new, :create,:edit,:update] do
