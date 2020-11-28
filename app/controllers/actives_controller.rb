@@ -33,7 +33,7 @@ class ActivesController < ApplicationController
     @task = Task.find(params[:task_id]) 
     @active = Active.find(params[:id]) 
     if @active.update(active_params)
-       redirect_to prep_task_actives_path(@prep.id,@task.id,@acrive)
+       redirect_to prep_task_actives_path(@prep.id,@task.id,@active)
     else
        render :edit
     end

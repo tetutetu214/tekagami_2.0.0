@@ -65,7 +65,7 @@
 
            
               <% @reviews.each do |review|%>
-                <% if user_signed_in? && current_user.id == reviews.user_id %>
+                <% if user_signed_in? && current_user.id == review.user_id %>
                 <li class="preps_list">
                   <%= review.rev_1 %>
                   <%= review.rev_2 %>
