@@ -63,13 +63,16 @@
           <div class="prep_list">
           <ul class="preps_lists">
 
-            <% if @reviews %>
+           
               <% @reviews.each do |review|%>
+                <% if user_signed_in? && current_user.id == reviews.user_id %>
                 <li class="preps_list">
                   <%= review.rev_1 %>
                   <%= review.rev_2 %>
                   <%= review.rev_3 %>
                   <%= link_to "ホームに戻る","/" %>
+                  <%= link_to "編集",edit_prep_task_active_review_path(@prep,@task,@active,review) %>
+                  <%=  button_to "削除",review_path(review),method: :delete %>
                 </li>
               <% end%>
             <% end %>
