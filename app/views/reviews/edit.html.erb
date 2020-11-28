@@ -1,7 +1,7 @@
 <div class="container-fluid bg-light d-flex flex-column" >
   <div class="container mb-auto">
   
-    <h1 class="mt-4">Lesson4 克服し現実へ</h1>
+    <h1 class="mt-4">edit Lesson4 克服し現実へ</h1>
 
     <div class="col-md-12 ">
       <div class="login-or">
@@ -52,31 +52,3 @@
       <% end %>
 
   </div>
-      <div class="form_tag"> 
-        <div class="col-md-12 ">
-          <div class="login-or">
-            <hr class="hr-or">
-          </div>
-        </div>
-      </div>
-
-          <div class="prep_list">
-          <ul class="preps_lists">
-
-           
-              <% @reviews.each do |review|%>
-                <% if user_signed_in? && current_user.id == review.user_id %>
-                <li class="preps_list">
-                  <%= review.rev_1 %>
-                  <%= review.rev_2 %>
-                  <%= review.rev_3 %>
-                  <%= link_to "ホームに戻る","/" %>
-                  <%= link_to "編集",edit_prep_task_active_review_path(@prep,@task,@active,review) %>
-                  <%=  button_to "削除",review_path(review),method: :delete %>
-                </li>
-              <% end%>
-            <% end %>
-
-          </ul>
-        </div>
-</div>

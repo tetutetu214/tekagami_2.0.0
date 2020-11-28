@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @prep = Prep.find(params[:prep_id])
     @task = Task.find(params[:task_id]) 
@@ -21,6 +23,32 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @prep = Prep.find(params[:prep_id])
+    @task = Task.find(params[:task_id]) 
+    @active = Active.find(params[:active_id])  
+    @review = Review.find(params[:id])  
+    redirect_to action: :index unless user_signed_in? && current_user.id == @review.user_id
+  end
+
+  def update
+    @prep = Prep.find(params[:prep_id])
+    @task = Task.find(params[:task_id]) 
+    @active = Active.find(params[:active_id])  
+    @review = Review.find(params[:id])  
+    if @review.update(review_params)
+       redirect_to prep_task_active_reviews_path(@prep.id,@task.id,@active.id,@review)
+    else
+       render :edit
+    end
+  end
+
+  def destroy
+    review = Review.find(params[:id])
+    review.destroy
+    redirect_to preps_path
+  end
+  
   private
 
   def review_params
