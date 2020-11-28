@@ -1,0 +1,54 @@
+<div class="container-fluid bg-light d-flex flex-column" >
+  <div class="container mb-auto">
+  
+    <h1 class="mt-4">edit Lesson4 克服し現実へ</h1>
+
+    <div class="col-md-12 ">
+      <div class="login-or">
+          <hr class="hr-or">
+      </div>
+    </div>
+
+     <p>あなたにとって大切で重要な刺激的なことをやっているならば<br>あなたは頑張る必要はない<br>Visionがあなたを突き動かしてくれる<br>by スティーブ・ジョブズ</p>
+
+    <div class="col-md-12 ">
+      <div class="login-or">
+          <hr class="hr-or">
+      </div>
+    </div>
+
+    <p>Lesson3 での内容表示 <br>〜さんの夢への課題<br>いつやる？: 会社帰り<br>どこでする: 電車の中で <br>どんな気持ち:わくわく<p>
+
+    <div class="col-md-12 ">
+      <div class="login-or">
+          <hr class="hr-or">
+      </div>
+    </div>
+
+      <%= form_with(model: [@prep, @task, @active, @review], local: true) do |f| %>
+      
+        <%= render 'shared/error_messages', model:  f.object %>
+
+        <div class="form-group mt-2">
+          <%= f.label :rev_1, "どれだけ夢に近づいたか" %><br />
+          <%= f.text_area :rev_1, class: "form-control", placeholder: "(例)最初よりも少しだけ、なにか良くなった" %>
+        </div>
+        <div class="form-group mt-2">
+          <%= f.label :rev_2, "行動して止めようとしたこと" %><br />
+          <%= f.text_area :rev_2, class: "form-control", placeholder: "(例)朝時間の有効に使うため、23時までに就寝するようにする" %>
+        </div>
+       <div class="form-group mt-2">
+          <%= f.label :rev_3, "行動して方法を変えたほうがいいもの" %><br />
+          <%= f.text_area :rev_3, class: "form-control", placeholder: "(例)朝は満員電車のため、聴く学習を取り入れる" %>
+        </div>
+       <div class="form-group mt-2">
+          <%= f.label :rev_4, "行動して新しく初めてみようとしていること" %><br />
+          <%= f.text_area :rev_4, class: "form-control", placeholder: "(例)タイマーを使って時間を区切ってみる" %>
+        </div>
+
+        <div class="text-center mb-5">
+          <%= f.submit "記録する" ,class:"btn btn-block send-button tx-tfm" %>
+        </div>
+      <% end %>
+
+  </div>
